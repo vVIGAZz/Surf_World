@@ -1,0 +1,31 @@
+{
+  "Title": "Surf World",
+  "Type": "game",
+  "Org": "baldpig",
+  "Ident": "surf_world",
+  "Schema": 1,
+  "IncludeSourceFiles": false,
+  "Resources": "C:\\S&box Project\\surf_world\\Assets\\audio\\music\nC:\\S&box Project\\surf_world\\Assets\\audio\\sfx\\player\nC:\\S&box Project\\surf_world\\Assets\\ui\nsurf_world\\Assets\\ui\nAssets\\ui\n.png",
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "Mounts": null,
+  "IsStandaloneOnly": false,
+  "Metadata": {
+    "MaxPlayers": 64,
+    "MinPlayers": 1,
+    "TickRate": 50,
+    "GameNetworkType": "Multiplayer",
+    "MapSelect": "Unrestricted",
+    "MapList": [
+      "facepunch.flatgrass"
+    ],
+    "RankType": "None",
+    "PerMapRanking": false,
+    "LeaderboardType": "None",
+    "CsProjName": "",
+    "StartupScene": "scenes/mainmenu.scene",
+    "LaunchMode": "Normal",
+    "MapStartupScene": "scenes/mainmenu.scene",
+    "DedicatedServerStartupScene": "scenes/mainmenu.scene"
+  }
+}

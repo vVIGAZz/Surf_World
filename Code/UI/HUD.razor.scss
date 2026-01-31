@@ -1,0 +1,27 @@
+HUD {
+	position: absolute;
+	top: 700;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+
+	.hud {
+		font-size: 25px;
+		font-family: Poppins;
+		flex-direction: column;
+		color: #000;
+		padding: 0px 45px 0px 45px;
+		background-color: orange;
+		border-radius:4px;
+		opacity: 0.7;
+	}
+
+	.timer, .personal-record, .world-record {
+		opacity:100;
+
+	}
+}

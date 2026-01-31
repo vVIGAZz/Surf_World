@@ -1,0 +1,41 @@
+{
+  "RootObject": {
+    "__guid": "b06000e2-6788-4fa6-8c9a-85a5d608ca3d",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "Map Data",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "MapIdent",
+        "__guid": "467ffcee-d2da-4599-86ef-3a712e827040",
+        "__enabled": true,
+        "Flags": 0,
+        "MapID": "surf_desert",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

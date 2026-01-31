@@ -1,0 +1,27 @@
+Leaderboard {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: slategrey;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+	font-size: 32px;
+	font-family: Poppins;
+	color: black;
+
+	.leader-container {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.leader-entires {
+		padding: 0px 0px 350px 0px;
+	}
+	.entrie-rank, .entrie-name, .entrie-value {
+		margin-right: 10px;
+	}
+}

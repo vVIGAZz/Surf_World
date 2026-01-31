@@ -1,0 +1,61 @@
+MainMenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 20px;
+    pointer-events: all;
+    font-size: 25px;
+    font-family: Poppins;
+    color: #fff;
+
+    .board {
+        background-image: url(ui/background.vtex);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 115vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name {
+        background-image: url(ui/name.vtex);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 150vw;
+        max-width: 700px;
+        aspect-ratio: 16 / 9;
+        position: absolute;
+        top: 100px;
+        left: 38%;
+    }
+
+    .sub-name {
+        background-image: url(ui/subname.vtex);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 80vw;
+        max-width: 700px;
+        aspect-ratio: 16 / 9;
+        position: absolute;
+        top: 350px;
+        left: 32%;
+    }
+
+    .content {
+        margin: 350px 0px 0px 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .exit-button {
+        margin: 150px 0px 0px 0px;
+        align-items: center;
+    }
+}

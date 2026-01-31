@@ -1,0 +1,58 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+    <div class="hud">
+        <div class="timer">T: @TextFormatForTimer(_currentTime)</div>
+        <div class="personal-record">PR:@TextFormatForRecords(_bestTime)</div>
+        <div class="world-record">WR: @TextFormatForWorldRecords(_worldRecord)</div>
+    </div>
+</root>
+
+@code
+{
+    private double _currentTime = 0;
+    private double _bestTime = 0;
+    private double _worldRecord = 0;
+    private string _name = "";
+    [Property] private Leaderboard _leaderboard;
+    public void UpdateTime(double time)
+    {
+        _currentTime = time;
+        StateHasChanged();
+    }
+    public void UpdateRecords(double time)
+    {
+        _bestTime = time;
+        StateHasChanged();
+    }
+    public void UpdateWorldRecords(double time)
+    {
+
+        _worldRecord = time;
+        StateHasChanged();
+    }
+    public string TextFormatForTimer(double Time)
+    {
+        double second = Time;
+        int minute = (int)Time / 60;
+        return $"{minute:00}:{second:00.000}";
+    }
+    public string TextFormatForRecords(double PlayerTime)
+    {
+        if (PlayerTime == 0) return $"--:--";
+        double second = PlayerTime;
+        int minute = (int)PlayerTime / 60;
+        return $"{minute:00}:{second:00.000}";
+    }
+    public string TextFormatForWorldRecords(double WorldRecord)
+    {
+        if (WorldRecord == 0) return $"--:--";
+        double second = WorldRecord;
+        int minute = (int)WorldRecord / 60;
+        return $"{minute:00}:{second:00.000}";
+    }
+    protected override int BuildHash() => System.HashCode.Combine(_currentTime, _bestTime, _worldRecord, _name );
+}

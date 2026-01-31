@@ -1,0 +1,55 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services
+@using System.Threading.Tasks
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="leader-container">
+		<div class="leader">Leaderboard</div>
+		<div class="leader-entires">
+			@for(int i = 0; i < entries.Count && i < 10; i++)
+			{
+				var entrie = entries[i];
+				<div calss="leader-entrie">
+					<div class="entrie-rank">@(i+1).</div>
+                    <div class="entrie-name">@entrie.DisplayName</div>
+                    <div calss="entrie-value">@FormatTime(entrie.Value)</div>
+				</div>
+
+			}
+		</div>
+	</div>
+</root>
+
+@code
+{
+    public List<Leaderboards.Board2.Entry> entries = new();
+    private string statName = "";
+    public double WR { get; set; } = 0;
+    public async Task SetStatistic(string name)
+    {
+        statName = name;
+        entries.Clear();
+        var board = Leaderboards.GetFromStat(statName);
+        board.SetAggregationMin();
+        board.SetSortAscending();
+        board.MaxEntries = 10;
+        await board.Refresh();
+        entries = board.Entries.ToList();
+        if (entries.Count > 0)
+        {
+            WR = entries[0].Value;
+        }
+        StateHasChanged();
+    }
+    private string FormatTime(double timeSecond)
+    {
+        if (timeSecond == 0) return "--:--";
+        double minutes = (int)timeSecond / 60;
+        double seconds = timeSecond;
+        return $"{minutes:00}:{seconds:00.000}";
+    }
+	protected override int BuildHash() => System.HashCode.Combine( statName, entries, FormatTime, WR);
+}

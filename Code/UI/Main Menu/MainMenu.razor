@@ -1,0 +1,61 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+    <div class="board">
+    <div class="name"></div>
+    <div class="sub-name"></div>
+        <div class="content">
+        @if (!ShowMapList)
+        {
+       
+            <div class="map-select button" onclick=@(() => ShowMapList = !ShowMapList)>Map Select</div>
+            <div class="exit exit-button" onclick=@CloseGame>Exit</div>
+        }
+        else
+        {
+            <div class="maps">
+                @foreach(var map in mapItems)
+                {
+                    <div class="map-item button" onclick=@(() => LoadMap(map.SceneName))>
+                        <div class="map-name button">@map.Name</div>
+                    </div>
+                }
+            </div>
+            <div class="back-button exit-button" onclick="@(() => ShowMapList = !ShowMapList)">Back</div>
+        }
+             </div>
+    </div>
+</root>
+
+@code
+{
+
+    private bool ShowMapList = false;
+    private List<MapItem> mapItems = new List<MapItem>
+    {
+        new MapItem {Name = "Beginner", SceneName = "surf_beginner"},
+    };
+
+    private void CloseGame()
+    {
+        Game.Close();
+    }
+    private void LoadMap(string SceneName)
+    {
+        string load = "scenes/" + SceneName + ".scene";
+        Scene.LoadFromFile(load);
+        Log.Info("Scene load");
+    }
+    protected override int BuildHash() => System.HashCode.Combine(ShowMapList);
+
+
+    public class MapItem
+    {
+        public string Name { get; set; }
+        public string SceneName { get; set; }
+        public string GetIcon() => $"textures/UI/{Name.ToLower()}.vtex";
+    }
+}
