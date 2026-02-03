@@ -18,9 +18,12 @@ Leaderboard {
 		justify-content: center;
 		align-items: center;
 	}
+
 	.leader-entires {
+		flex-direction: column;
 		padding: 0px 0px 350px 0px;
 	}
+
 	.entrie-rank, .entrie-name, .entrie-value {
 		margin-right: 10px;
 	}

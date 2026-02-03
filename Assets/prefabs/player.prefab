@@ -3,7 +3,7 @@
     "__guid": "be8fd39d-9794-45bc-9916-93c459adfd6e",
     "__version": 2,
     "Flags": 0,
-    "Name": "Player",
+    "Name": "player",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -23,7 +23,7 @@
         "Acceleration": 10,
         "Bounciness": 0.3,
         "GroundAngle": 45,
-        "Height": 0,
+        "Height": 64,
         "IgnoreLayers": "",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -31,7 +31,7 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "Radius": 0,
+        "Radius": 16,
         "StepHeight": 18,
         "UseCollisionRules": true
       },
@@ -59,7 +59,8 @@
           "component_id": "4c8e7a38-c0c7-4ed9-9c4a-97637bc34f10",
           "go": "be8fd39d-9794-45bc-9916-93c459adfd6e",
           "component_type": "SoundBoxComponent"
-        }
+        },
+        "spawn": null
       },
       {
         "__type": "Sandbox.SoundBoxComponent",
@@ -200,7 +201,7 @@
                 "BackgroundColor": "0.33333,0.46275,0.52157,1",
                 "ClearFlags": "All",
                 "EnablePostProcessing": true,
-                "FieldOfView": 65,
+                "FieldOfView": 70,
                 "FovAxis": "Horizontal",
                 "IsMainCamera": true,
                 "OnComponentDestroy": null,
@@ -218,7 +219,7 @@
                 "RenderTexture": null,
                 "TargetEye": "None",
                 "Viewport": "0,0,1,1",
-                "ZFar": 10000,
+                "ZFar": 6000,
                 "ZNear": 1
               },
               {
@@ -270,13 +271,53 @@
                 "OnComponentStart": null,
                 "OnComponentUpdate": null,
                 "Rate": 1
+              },
+              {
+                "__type": "Sandbox.CubemapFog",
+                "__guid": "3b1ec65e-7353-4864-aa53-87b3923e887a",
+                "__enabled": true,
+                "Flags": 0,
+                "Blur": 0.5,
+                "EndDistance": 4500,
+                "FalloffExponent": 2,
+                "HeightExponent": 2,
+                "HeightStart": 2000,
+                "HeightWidth": 4500,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "Sky": null,
+                "StartDistance": 2,
+                "Tint": "0.82353,0.76471,0.63137,1"
               }
             ],
             "Children": []
           }
         ]
       }
-    ]
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

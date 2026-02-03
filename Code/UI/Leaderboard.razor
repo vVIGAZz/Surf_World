@@ -12,10 +12,10 @@
 			@for(int i = 0; i < entries.Count && i < 10; i++)
 			{
 				var entrie = entries[i];
-				<div calss="leader-entrie">
+				<div class="leader-entrie">
 					<div class="entrie-rank">@(i+1).</div>
                     <div class="entrie-name">@entrie.DisplayName</div>
-                    <div calss="entrie-value">@FormatTime(entrie.Value)</div>
+                    <div class="entrie-value">@FormatTime(entrie.Value)</div>
 				</div>
 
 			}
@@ -48,8 +48,8 @@
     {
         if (timeSecond == 0) return "--:--";
         double minutes = (int)timeSecond / 60;
-        double seconds = timeSecond;
+        double seconds = timeSecond % 60;
         return $"{minutes:00}:{seconds:00.000}";
     }
-	protected override int BuildHash() => System.HashCode.Combine( statName, entries, FormatTime, WR);
+	protected override int BuildHash() => System.HashCode.Combine( statName, entries.Count, WR);
 }

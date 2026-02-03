@@ -4,8 +4,12 @@
 @namespace Sandbox
 
 <root>
-    <div class="text" onclick="@ResetGame">Restart</div>
-	<div class="text" onclick="@BackToMenu">Back to menu</div>
+    <div class="content">
+        <div class="text">Press B to back Main Menu</div>
+    </div>
+    <div class="content">
+        <div class="text">Press R to Respawn</div>
+    </div>
 
 </root>
 
@@ -14,15 +18,17 @@
 
 
     [Property] private SceneFile mainMenu;
-    [Property] private GameData spawn;
+    protected override void OnUpdate( )
+    {
+        BackToMenu();
+    }
 
     private void BackToMenu()
     {
-        Scene.Load(mainMenu);
+        if (Input.Keyboard.Pressed("B"))
+        {
+            Scene.Load(mainMenu);
+        }
     }
-    private void ResetGame()
-    {
-        Scene.LoadFromFile("scenes/surf_beginner.scene");
-    }
-    protected override int BuildHash() => System.HashCode.Combine( BackToMenu );
+    protected override int BuildHash() => System.HashCode.Combine(BackToMenu);
 }

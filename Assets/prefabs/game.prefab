@@ -1,0 +1,179 @@
+{
+  "RootObject": {
+    "__guid": "194c0836-1221-4f07-a207-b13008fd3f9d",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "Game",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Timer",
+        "__guid": "f23dcfe6-b456-466f-b5b9-3c57a2d33a47",
+        "__enabled": true,
+        "Flags": 0,
+        "hud": {
+          "_type": "component",
+          "component_id": "ca1390c1-7c58-4f22-8405-a4eb4aaa1f55",
+          "go": "14e0f497-4bb2-4cbc-9aeb-0d5b0b18f74f",
+          "component_type": "HUD"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
+        "__type": "GameData",
+        "__guid": "51bebfbb-0497-489e-8fe0-7d3847cce8ec",
+        "__enabled": true,
+        "Flags": 0,
+        "_bestTime": 0,
+        "_hud": {
+          "_type": "component",
+          "component_id": "ca1390c1-7c58-4f22-8405-a4eb4aaa1f55",
+          "go": "14e0f497-4bb2-4cbc-9aeb-0d5b0b18f74f",
+          "component_type": "HUD"
+        },
+        "_isFirstRun": true,
+        "_leaderboard": {
+          "_type": "component",
+          "component_id": "86bced5a-4b36-42cb-96fc-de14d5a73f5e",
+          "go": "52943361-9ae3-4d09-a825-7b7216f1b660",
+          "component_type": "Leaderboard"
+        },
+        "mapConfig": {
+          "_type": "component",
+          "component_id": "4592e1db-039b-41a9-83c9-21d3f39413db",
+          "go": "205cc4c0-4bbc-4428-a42c-bba967e047b0",
+          "component_type": "MapIdent"
+        },
+        "MapName": null,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "player": {
+          "_type": "gameobject",
+          "go": "894dc7e8-e6fb-4b6a-8938-cffcec2e4f93"
+        },
+        "spawn": {
+          "_type": "gameobject",
+          "go": "f8ebd531-1796-41c1-b6c1-32f290766583"
+        }
+      },
+      {
+        "__type": "Pause",
+        "__guid": "836cbc2f-7959-4992-8a51-71f266ec6a1b",
+        "__enabled": true,
+        "Flags": 0,
+        "_playerMovement": {
+          "_type": "component",
+          "component_id": "87b028ee-7ac3-41f6-b471-67f23c7a912c",
+          "go": "894dc7e8-e6fb-4b6a-8938-cffcec2e4f93",
+          "component_type": "Movement"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "pause": {
+          "_type": "component",
+          "component_id": "c05c9d83-daa8-495e-81a3-05f5983cf803",
+          "go": "1b04c2b6-eca7-4b36-baa9-805abdfc7f8c",
+          "component_type": "PauseMenu"
+        },
+        "timer": {
+          "_type": "component",
+          "component_id": "f23dcfe6-b456-466f-b5b9-3c57a2d33a47",
+          "go": "194c0836-1221-4f07-a207-b13008fd3f9d",
+          "component_type": "Timer"
+        }
+      },
+      {
+        "__type": "SaveLoadSystem",
+        "__guid": "1ddf6036-7522-4c84-8760-3426cbeb0bdc",
+        "__enabled": true,
+        "Flags": 0,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
+        "__type": "Sandbox.SoundPointComponent",
+        "__guid": "8a49e6ab-eeb1-4045-acec-6d10d86d956e",
+        "__enabled": true,
+        "Flags": 0,
+        "Distance": 512,
+        "DistanceAttenuation": false,
+        "DistanceAttenuationOverride": false,
+        "Falloff": [
+          {
+            "x": 0,
+            "y": 1,
+            "in": 3.1415927,
+            "out": -3.1415927,
+            "mode": "Mirrored"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "in": 0,
+            "out": 0,
+            "mode": "Mirrored"
+          }
+        ],
+        "Force2d": true,
+        "MaxRepeatTime": 1,
+        "MinRepeatTime": 1,
+        "Occlusion": false,
+        "OcclusionOverride": false,
+        "OcclusionRadius": 32,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Pitch": 1,
+        "PlayOnStart": true,
+        "ReflectionOverride": false,
+        "Reflections": false,
+        "Repeat": true,
+        "SoundEvent": "audio/music/azart.sound",
+        "SoundOverride": true,
+        "StopOnNew": false,
+        "TargetMixer": {
+          "Name": "music",
+          "Id": "eebc48b0-aa05-445c-b996-58c020427fc0"
+        },
+        "Volume": 0.11940298
+      }
+    ],
+    "Children": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

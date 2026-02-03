@@ -20,51 +20,53 @@ public sealed class GameData : Component, SetTime
 		LoadTime();
 		Spawn();
 		await _leaderboard.SetStatistic( MapName );
-		LoadLeaderboard();
 		_hud.UpdateRecords( _bestTime );
 		_hud.UpdateWorldRecords( _leaderboard.WR );
 
 	}
+	protected override void OnUpdate()
+	{
+		if ( Input.Pressed( "reload" ) )
+		{
+			Spawn();
+		}
+	}
 	public void Spawn()
 	{
-		if ( player != null ) player.WorldPosition = spawn.WorldPosition;
+		if ( player != null )
+		{
+			player.WorldPosition = spawn.WorldPosition;
+		}
 	}
-	public void SetTime( double bestTime)
+	public async void SetTime( double bestTime)
 	{
+		if ( bestTime <= 0 )
+		{
+			return;
+		}
 		if (_isFirstRun || bestTime < _bestTime )
 		{
 			_isFirstRun = false;
 			_bestTime = bestTime;
 			_hud.UpdateRecords( _bestTime );
 			SaveTime();
-			SetValueToStat();
-			LoadLeaderboard();
+			Stats.SetValue( MapName, _bestTime );
+			await _leaderboard.SetStatistic( MapName );
 			_hud.UpdateWorldRecords( _leaderboard.WR );
 		}
 	}
-	public void SetValueToStat()
-	{
-		Stats.SetValue( MapName, _bestTime );
-	}
-	public void LoadLeaderboard()
-	{
-		_leaderboard.SetStatistic( MapName );
-	}
-
 	private void SaveTime()
 	{
-		var saveData = new PlayerSaveLoad
-		{
-			PersonalRecords = _bestTime
-		};
+		var saveData = SaveLoadSystem.Load() ?? new PlayerSaveLoad();
+		saveData.PersonalRecords[MapName] = _bestTime;
 		SaveLoadSystem.Save( saveData );
 	}
 	private void LoadTime()
 	{
 		var loadData = SaveLoadSystem.Load();
-		if ( loadData != null )
+		if ( loadData != null && loadData.PersonalRecords.ContainsKey( MapName ) )
 		{
-			_bestTime = loadData.PersonalRecords;
+			_bestTime = loadData.PersonalRecords[MapName];
 			_isFirstRun = _bestTime == 0;
 		}
 		else

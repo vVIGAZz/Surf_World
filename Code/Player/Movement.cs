@@ -14,11 +14,13 @@ public sealed class Movement : Component
 	private float jumpForce = 268f;
 	//Movement property
 	public Vector3 WishVelocity;
-	public Angles EyeAngle;
+	[Sync] public Angles EyeAngle { get; set;}
 	//Speed
 	private float speed = 420f;
 	protected override void OnStart()
 	{
+
+		if ( Network.IsProxy ) return;
 		controller = GetComponent<CharacterController>();
 		controller.Acceleration = 110;
 		controller.GroundAngle = 45;
@@ -26,11 +28,16 @@ public sealed class Movement : Component
 	}
 	protected override void OnUpdate()
 	{
-		Angles look = EyeAngle;
-		look += Input.AnalogLook;
-		look.roll = 0;
-		look.pitch = look.pitch.Clamp( -89f, 89f );
-		EyeAngle = look;
+		if ( !Network.IsProxy )
+		{
+			Angles look = EyeAngle;
+			look += Input.AnalogLook;
+			look.roll = 0;
+			look.pitch = look.pitch.Clamp( -89f, 89f );
+			EyeAngle = look;
+		}
+
+
 		Rotation lookDir = EyeAngle.ToRotation();
 		head.WorldRotation = lookDir;
 		WorldRotation = Rotation.FromYaw( EyeAngle.yaw );
@@ -39,7 +46,7 @@ public sealed class Movement : Component
 	}
 	protected override void OnFixedUpdate()
 	{
-
+		if ( Network.IsProxy ) return;
 		BuildWishVelocity();
 		if ( controller.IsOnGround && Input.Pressed( "jump" ) ) controller.Punch( Vector3.Up * jumpForce );
 		if ( controller.IsOnGround )
@@ -73,6 +80,7 @@ public sealed class Movement : Component
 		SceneTraceResult tr = Scene.Trace.Sphere(32f, WorldPosition, WorldPosition + Vector3.Down * 2 ).WithTag("terrain").Run();
 		if ( tr.Hit )
 		{
+			Log.Info( tr.GameObject );
 			WorldPosition = spawn.WorldPosition;
 		}
 	}

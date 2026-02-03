@@ -12,7 +12,7 @@
         {
        
             <div class="map-select button" onclick=@(() => ShowMapList = !ShowMapList)>Map Select</div>
-            <div class="exit exit-button" onclick=@CloseGame>Exit</div>
+            <div class="exit button" onclick=@CloseGame>Exit</div>
         }
         else
         {
@@ -24,7 +24,7 @@
                     </div>
                 }
             </div>
-            <div class="back-button exit-button" onclick="@(() => ShowMapList = !ShowMapList)">Back</div>
+                <div class="exit button " onclick="@(() => ShowMapList = !ShowMapList)">Back</div>
         }
              </div>
     </div>
@@ -37,6 +37,7 @@
     private List<MapItem> mapItems = new List<MapItem>
     {
         new MapItem {Name = "Beginner", SceneName = "surf_beginner"},
+        new MapItem {Name = "Structure", SceneName = "surf_struct"}
     };
 
     private void CloseGame()

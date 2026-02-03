@@ -3,20 +3,27 @@ using Sandbox;
 public sealed class FinishTrigger : Component, Component.ITriggerListener
 {
 	[Property] public GameObject spawn;
+	private float _respawnCouldown = 0f;
+
+	protected override void OnUpdate()
+	{
+		if (_respawnCouldown > 0 )
+		{
+			_respawnCouldown -= Time.Delta;
+		}
+	}
 	public void OnTriggerEnter(Collider other )
 	{
 		if ( other.Tags.Has( "player" ) )
 		{
 			FinishEvent.Post( x => x.IsFinished( true ) );
 			EventTimer.Post( x => x.StopTimer() );
-			float timer = 3;
-			timer -= Time.Delta;
-			if ( timer <= 0 )
+			_respawnCouldown = 5f;
+			if ( _respawnCouldown <= 0 )
 			{
-				other.GameObject.WorldPosition = spawn.WorldPosition;
-				timer = 3;
+				other.WorldPosition = spawn.WorldPosition;
+				_respawnCouldown = 0f;
 			}
-
 		}
 	}
 	public void OnTriggerExit( Collider other )

@@ -36,21 +36,21 @@
     }
     public string TextFormatForTimer(double Time)
     {
-        double second = Time;
+        double second = Time % 60;
         int minute = (int)Time / 60;
         return $"{minute:00}:{second:00.000}";
     }
     public string TextFormatForRecords(double PlayerTime)
     {
         if (PlayerTime == 0) return $"--:--";
-        double second = PlayerTime;
+        double second = PlayerTime % 60;
         int minute = (int)PlayerTime / 60;
         return $"{minute:00}:{second:00.000}";
     }
     public string TextFormatForWorldRecords(double WorldRecord)
     {
         if (WorldRecord == 0) return $"--:--";
-        double second = WorldRecord;
+        double second = WorldRecord % 60;
         int minute = (int)WorldRecord / 60;
         return $"{minute:00}:{second:00.000}";
     }
