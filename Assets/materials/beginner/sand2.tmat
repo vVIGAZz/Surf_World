@@ -1,0 +1,16 @@
+{
+  "AlbedoImage": "textures/desert/sand/sand2_base.png",
+  "RoughnessImage": "materials/default/default_rough.tga",
+  "NormalImage": "textures/desert/sand/sand2_normal.png",
+  "HeightImage": "materials/default/default_height.tga",
+  "AOImage": "materials/default/default_ao.tga",
+  "UVScale": 1,
+  "Metalness": 0,
+  "NormalStrength": 1,
+  "HeightBlendStrength": 1,
+  "DisplacementScale": 0,
+  "NoTiling": false,
+  "Surface": null,
+  "__references": [],
+  "__version": 0
+}

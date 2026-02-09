@@ -1,14 +1,14 @@
 PauseMenu {
 	flex-direction: column;
 	justify-content:flex-end;
-	padding:0px 0px 130px 50px;
+	padding:0px 0px 20px 20px;
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 16px;
 	font-family: Poppins;
 	color: #000;
 
 	.text {
-		opacity: 100;
+		opacity: 150;
 	}
 
 	.content {
@@ -16,6 +16,6 @@ PauseMenu {
 		border-radius: 5px;
 		padding: 5px;
 		margin: 0px 0px 5px 0px;
-		opacity: 0.7;
+		opacity: 0.4;
 	}
 }

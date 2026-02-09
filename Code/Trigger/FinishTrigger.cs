@@ -2,7 +2,7 @@ using Sandbox;
 
 public sealed class FinishTrigger : Component, Component.ITriggerListener
 {
-	[Property] public GameObject spawn;
+	[Property] public GameData spawn;
 	private float _respawnCouldown = 0f;
 
 	protected override void OnUpdate()
@@ -18,12 +18,7 @@ public sealed class FinishTrigger : Component, Component.ITriggerListener
 		{
 			FinishEvent.Post( x => x.IsFinished( true ) );
 			EventTimer.Post( x => x.StopTimer() );
-			_respawnCouldown = 5f;
-			if ( _respawnCouldown <= 0 )
-			{
-				other.WorldPosition = spawn.WorldPosition;
-				_respawnCouldown = 0f;
-			}
+			spawn.Spawn();
 		}
 	}
 	public void OnTriggerExit( Collider other )

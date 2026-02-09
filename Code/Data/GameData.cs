@@ -12,7 +12,7 @@ public sealed class GameData : Component, SetTime
 	[Property] public GameObject player;
 	//Spawn
 	[Property] public GameObject spawn;
-	[Property]private double _bestTime;
+	[Property] private double _bestTime;
 	[Property] private bool _isFirstRun = true;
 	protected override async void OnStart()
 	{
@@ -31,8 +31,9 @@ public sealed class GameData : Component, SetTime
 			Spawn();
 		}
 	}
-	public void Spawn()
+	public async void Spawn()
 	{
+		await _leaderboard.SetStatistic( MapName );
 		if ( player != null )
 		{
 			player.WorldPosition = spawn.WorldPosition;
