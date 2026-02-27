@@ -21,7 +21,7 @@ public sealed class Movement : Component
 	protected override void OnStart()
 	{
 		controller = GetComponent<CharacterController>();
-		controller.Acceleration = 110;
+		controller.Acceleration = 110f;
 		controller.GroundAngle = 45;
 		controller.StepHeight = 0;
 	}
@@ -57,8 +57,8 @@ public sealed class Movement : Component
 		{
 			sfx.Enabled = false;
 			controller.Velocity -= gravity * Time.Delta;
-			controller.Accelerate( WishVelocity.ClampLength( 180 ) );
-			controller.ApplyFriction( 0.1f );
+			controller.Accelerate( WishVelocity.ClampLength( 150 ) );
+			//controller.ApplyFriction( 0f );
 		}
 		controller.Move();
 	}
