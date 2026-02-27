@@ -5,9 +5,20 @@
 
 <root>
     <div class="hud">
-        <div class="timer">T: @TextFormatForTimer(_currentTime)</div>
-        <div class="personal-record">PR:@TextFormatForRecords(_bestTime)</div>
-        <div class="world-record">WR: @TextFormatForWorldRecords(_worldRecord)</div>
+        <div class="hud-timer-block">
+            <div class="hud-label">TIME</div>
+            <div class="timer">@TextFormatForTimer(_currentTime)</div>
+        </div>
+        <div class="hud-records-block">
+            <div class="hud-record-row">
+                <div class="hud-label pr-label">PR</div>
+                <div class="personal-record">@TextFormatForRecords(_bestTime)</div>
+            </div>
+            <div class="hud-record-row">
+                <div class="hud-label wr-label">WR</div>
+                <div class="world-record">@TextFormatForWorldRecords(_worldRecord)</div>
+            </div>
+        </div>
     </div>
 </root>
 

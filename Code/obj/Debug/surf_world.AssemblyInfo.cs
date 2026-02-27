@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("surf_world")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67eaca6b7800c0666c6b3a994d0db1c1a39bfa1d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3a5556a4bb5822ba1ed6f5948277d0ba06383ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("surf_world")]
 [assembly: System.Reflection.AssemblyTitleAttribute("surf_world")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
