@@ -21,7 +21,7 @@ public sealed class Movement : Component
 	protected override void OnStart()
 	{
 		controller = GetComponent<CharacterController>();
-		controller.Acceleration = 110f;
+		controller.Acceleration = 60f;
 		controller.GroundAngle = 45;
 		controller.StepHeight = 0;
 	}
