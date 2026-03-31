@@ -1,6 +1,7 @@
 @using Sandbox;
 @using Sandbox.UI;
-@using System.Threading.Tasks
+@using Sandbox.Network;
+@using System.Threading.Tasks;
 @inherits PanelComponent
 @namespace Sandbox
 
@@ -34,6 +35,7 @@
 
 @code
 {
+    [Property] public GameManager G;
 
     private bool ShowMapList = false;
     private List<MapItem> mapItems = new List<MapItem>
@@ -58,12 +60,15 @@
     private void LoadMap(string SceneName)
     {
         string load = "scenes/" + SceneName + ".scene";
+        G.MapName = SceneName;
         Scene.LoadFromFile(load);
-        Log.Info("Scene load");
+        Networking.CreateLobby(new LobbyConfig(){
+            MaxPlayers = 8,
+            Privacy = LobbyPrivacy.Public,
+        });
+        
     }
     protected override int BuildHash() => System.HashCode.Combine(ShowMapList);
-
-
     public class MapItem
     {
         public string Name { get; set; }

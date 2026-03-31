@@ -53,7 +53,7 @@
       "__guid": "d9308ed4-ad40-4d9d-b6da-458f29ccd0fd",
       "__version": 2,
       "Flags": 0,
-      "Name": "UI",
+      "Name": "Main Menu",
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
@@ -93,6 +93,12 @@
           "__guid": "5f208aa0-69d4-4c48-a2f7-c27cb1147cf9",
           "__enabled": true,
           "Flags": 0,
+          "G": {
+            "_type": "component",
+            "component_id": "8cd8e60b-0620-4562-b280-08acd9cdec53",
+            "go": "f05194b0-253e-40ac-9765-f9496c8fbe73",
+            "component_type": "GameManager"
+          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -171,6 +177,121 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "f05194b0-253e-40ac-9765-f9496c8fbe73",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Game Manager",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "GameManager",
+          "__guid": "8cd8e60b-0620-4562-b280-08acd9cdec53",
+          "__enabled": true,
+          "Flags": 0,
+          "Entries": [],
+          "MapName": null,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "spawnPoint": null
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "b3f333c0-1e47-4edf-a791-cef3f73a3c61",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "UI Panels",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [],
+          "Children": [
+            {
+              "__guid": "460a78ae-ed88-446c-b7a5-af7d19a0a3f2",
+              "__version": 2,
+              "Flags": 0,
+              "Name": "Leaderboard",
+              "Position": "0,0,0",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkFlags": 0,
+              "NetworkOrphaned": 0,
+              "NetworkTransmit": true,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.WorldPanel",
+                  "__guid": "bae4aa0a-6228-4a5f-8aaf-589faed561cc",
+                  "__enabled": true,
+                  "Flags": 0,
+                  "HorizontalAlign": "Center",
+                  "InteractionRange": 1000,
+                  "LookAtCamera": false,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "PanelSize": "1920,1080",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "RenderScale": 1,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "Sandbox.Leaderboard",
+                  "__guid": "f16f8843-1251-47d5-95ad-abdf1f6d93f3",
+                  "__enabled": true,
+                  "Flags": 0,
+                  "G": {
+                    "_type": "component",
+                    "component_id": "8cd8e60b-0620-4562-b280-08acd9cdec53",
+                    "go": "f05194b0-253e-40ac-9765-f9496c8fbe73",
+                    "component_type": "GameManager"
+                  },
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null
+                }
+              ],
+              "Children": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -188,7 +309,15 @@
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
-      "IncludedBodies": ""
+      "IncludedBodies": "",
+      "CustomBounds": false
+    },
+    "GameObjectSystems": {
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "129966db-21de-4f6e-ab08-6165837368ec"
+        }
+      }
     }
   },
   "ResourceVersion": 3,

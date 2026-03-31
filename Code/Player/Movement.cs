@@ -66,7 +66,14 @@ public sealed class Movement : Component
 		head.WorldRotation = lookDir;
 		WorldRotation = Rotation.FromYaw( EyeAngle.yaw );
 		body.WorldRotation = Rotation.FromYaw( EyeAngle.yaw );
-		//CheckGround();
+		if ( Input.Pressed( "reload" ) )
+		{
+			EventManager.Respawn( this );
+		}
+		if (Input.Keyboard.Pressed("B"))
+		{
+			Scene.LoadFromFile( "scenes/mainmenu.scene" );
+		}
 
 	}
 	protected override void OnFixedUpdate()
@@ -98,6 +105,7 @@ public sealed class Movement : Component
 			//controller.ApplyFriction( 0f );
 		}
 		controller.Move();
+		CheckGround();
 	}
 	private void BuildWishVelocity()
 	{
@@ -122,14 +130,13 @@ public sealed class Movement : Component
 			animation.Parameters.Set( "b_grounded", false );
 		}
 	}
-	//private void CheckGround()
-	//{
-	//	if ( IsProxy ) return;
-	//	SceneTraceResult tr = Scene.Trace.Sphere(32f, WorldPosition, WorldPosition + Vector3.Down * 2 ).WithTag("terrain").Run();
-	//	if ( tr.Hit )
-	//	{
-	//		WorldPosition = spawn.WorldPosition;
-	//		EventTimer.Post( x => x.StopTimer() );
-	//	}
-	//}
+	private void CheckGround()
+	{
+		if ( IsProxy ) return;
+		SceneTraceResult tr = Scene.Trace.Sphere( 32f, WorldPosition, WorldPosition + Vector3.Down * 2 ).WithTag( "terrain" ).Run();
+		if ( tr.Hit )
+		{
+			EventManager.Respawn( this );
+		}
+	}
 }

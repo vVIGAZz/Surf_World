@@ -3,17 +3,16 @@ using System.Collections.Generic;
 
 public sealed class SaveLoadSystem : Component
 {
-	public static void Save(PlayerSaveLoad player )
+	public static void Save( SaveFile player )
 	{
 		FileSystem.Data.WriteJson( "player.json", player );
 	}
-	public static PlayerSaveLoad Load()
+	public static SaveFile Load()
 	{
-		return FileSystem.Data.ReadJson<PlayerSaveLoad>( "player.json" );
+		return FileSystem.Data.ReadJson<SaveFile>( "player.json" );
 	}
 }
-
-public class PlayerSaveLoad
+public class SaveFile
 {
 	public Dictionary<string, double> PersonalRecords { get; set; } = new Dictionary<string, double>();
 }
