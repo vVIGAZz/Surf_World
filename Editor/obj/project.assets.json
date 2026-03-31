@@ -48,6 +48,19 @@
           "bin/placeholder/hammer.dll": {}
         }
       },
+      "moviemaker/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Base Editor Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/moviemaker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/moviemaker.dll": {}
+        }
+      },
       "shadergraph/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -97,6 +110,11 @@
       "path": "../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/Hammer/Code/hammer.csproj",
       "msbuildProject": "../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/Hammer/Code/hammer.csproj"
     },
+    "moviemaker/1.0.0": {
+      "type": "project",
+      "path": "../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/MovieMaker/Code/moviemaker.csproj",
+      "msbuildProject": "../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/MovieMaker/Code/moviemaker.csproj"
+    },
     "shadergraph/1.0.0": {
       "type": "project",
       "path": "../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj",
@@ -113,6 +131,7 @@
       "Base Editor Library >= 1.0.0",
       "actiongraph >= 1.0.0",
       "hammer >= 1.0.0",
+      "moviemaker >= 1.0.0",
       "shadergraph >= 1.0.0",
       "surf_world >= 1.0.0"
     ]
@@ -158,6 +177,9 @@
             "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\Hammer\\Code\\hammer.csproj": {
               "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\Hammer\\Code\\hammer.csproj"
             },
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\MovieMaker\\Code\\moviemaker.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\MovieMaker\\Code\\moviemaker.csproj"
+            },
             "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj": {
               "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj"
             },
@@ -172,7 +194,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net10.0": {
@@ -193,7 +215,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

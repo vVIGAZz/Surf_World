@@ -4,6 +4,7 @@ public sealed class StartTrigger : Component, Component.ITriggerListener
 {
 	public void OnTriggerEnter(Collider other )
 	{
+		if ( IsProxy ) return;
 		if ( other.Tags.Has( "player" ) )
 		{
 			EventTimer.Post( x => x.StopTimer() );
@@ -11,6 +12,7 @@ public sealed class StartTrigger : Component, Component.ITriggerListener
 	}
 	public void OnTriggerExit(Collider other )
 	{
+		if ( IsProxy ) return;
 		if ( other.Tags.Has( "player" ) )
 		{
 			EventTimer.Post( x => x.StartTimer() );

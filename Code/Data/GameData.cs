@@ -16,6 +16,7 @@ public sealed class GameData : Component, SetTime
 	[Property] private bool _isFirstRun = true;
 	protected override async void OnStart()
 	{
+		if ( IsProxy ) return;
 		MapName = mapConfig.MapID;
 		LoadTime();
 		Spawn();
@@ -26,6 +27,7 @@ public sealed class GameData : Component, SetTime
 	}
 	protected override void OnUpdate()
 	{
+		if ( IsProxy ) return;
 		if ( Input.Pressed( "reload" ) )
 		{
 			Spawn();
@@ -33,6 +35,7 @@ public sealed class GameData : Component, SetTime
 	}
 	public async void Spawn()
 	{
+		if ( IsProxy ) return;
 		await _leaderboard.SetStatistic( MapName );
 		if ( player != null )
 		{
@@ -41,6 +44,7 @@ public sealed class GameData : Component, SetTime
 	}
 	public async void SetTime( double bestTime)
 	{
+		if ( IsProxy ) return;
 		if ( bestTime <= 0 )
 		{
 			return;
@@ -58,12 +62,14 @@ public sealed class GameData : Component, SetTime
 	}
 	private void SaveTime()
 	{
+		if ( IsProxy ) return;
 		var saveData = SaveLoadSystem.Load() ?? new PlayerSaveLoad();
 		saveData.PersonalRecords[MapName] = _bestTime;
 		SaveLoadSystem.Save( saveData );
 	}
 	private void LoadTime()
 	{
+		if ( IsProxy ) return;
 		var loadData = SaveLoadSystem.Load();
 		if ( loadData != null && loadData.PersonalRecords.ContainsKey( MapName ) )
 		{

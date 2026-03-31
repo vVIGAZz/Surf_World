@@ -8,6 +8,7 @@ public sealed class Timer : Component, EventTimer, FinishEvent
 	[Property] private HUD hud;
 	protected override void OnUpdate()
 	{
+		if ( IsProxy ) return;
 		if ( !_IsStarted )
 		{
 			_time = 0;

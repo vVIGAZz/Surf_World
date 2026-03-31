@@ -19,6 +19,7 @@
     [Property] private SceneFile mainMenu;
     protected override void OnUpdate( )
     {
+        if (IsProxy) return;
         BackToMenu();
     }
 

@@ -1,5 +1,6 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using System.Threading.Tasks
 @inherits PanelComponent
 @namespace Sandbox
 
@@ -12,6 +13,7 @@
         {
        
             <div class="map-select button" onclick=@(() => ShowMapList = !ShowMapList)>Map Select</div>
+                <div class="map-select button" onclick=@JoinGame>Join Game</div>
             <div class="exit button" onclick=@CloseGame>Exit</div>
         }
         else
@@ -40,7 +42,15 @@
         //new MapItem {Name = "Struct", SceneName = "surf_struct"},
 
     };
-
+    private async Task JoinGame()
+    {
+        var list = await Networking.QueryLobbies();
+        var quickLobby = list.FirstOrDefault(l => l.IsFull != true);
+        if (quickLobby.LobbyId != 0)
+        {
+            Networking.Connect(quickLobby.LobbyId);
+        }
+    }
     private void CloseGame()
     {
         Game.Close();

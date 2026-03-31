@@ -7,6 +7,7 @@ public sealed class FinishTrigger : Component, Component.ITriggerListener
 
 	protected override void OnUpdate()
 	{
+		if ( IsProxy ) return;
 		if (_respawnCouldown > 0 )
 		{
 			_respawnCouldown -= Time.Delta;
@@ -14,6 +15,7 @@ public sealed class FinishTrigger : Component, Component.ITriggerListener
 	}
 	public void OnTriggerEnter(Collider other )
 	{
+		if ( IsProxy ) return;
 		if ( other.Tags.Has( "player" ) )
 		{
 			FinishEvent.Post( x => x.IsFinished( true ) );
@@ -23,6 +25,7 @@ public sealed class FinishTrigger : Component, Component.ITriggerListener
 	}
 	public void OnTriggerExit( Collider other )
 	{
+		if ( IsProxy ) return;
 		if ( other.Tags.Has( "player" ) )
 		{
 			FinishEvent.Post( x => x.IsFinished( false ) );
