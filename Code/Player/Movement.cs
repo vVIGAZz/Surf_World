@@ -43,7 +43,7 @@ public sealed class Movement : Component
 			controller = GetComponent<CharacterController>();
 			controller.Acceleration = 60f;
 			controller.GroundAngle = 45;
-			controller.StepHeight = 0;
+			controller.StepHeight = 15;
 			var cam = camera.Clone( head.WorldTransform );
 			cam.SetParent( head );
 			cam.NetworkMode = NetworkMode.Never;
@@ -69,9 +69,12 @@ public sealed class Movement : Component
 		if ( Input.Pressed( "reload" ) )
 		{
 			EventManager.Respawn( this );
+			controller.Velocity = 0;
 		}
 		if (Input.Keyboard.Pressed("B"))
 		{
+			Scene.GetAllComponents<GameManager>().FirstOrDefault().GameObject.Destroy();
+			GameObject.Destroy();
 			Scene.LoadFromFile( "scenes/mainmenu.scene" );
 		}
 
@@ -137,6 +140,7 @@ public sealed class Movement : Component
 		if ( tr.Hit )
 		{
 			EventManager.Respawn( this );
+			controller.Velocity = 0;
 		}
 	}
 }

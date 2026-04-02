@@ -10,14 +10,18 @@
     <div class="name"></div>
     <div class="sub-name"></div>
         <div class="content">
-        @if (!ShowMapList)
+        @if (!ShowMapList && !ShowServerList)
         {
        
             <div class="map-select button" onclick=@(() => ShowMapList = !ShowMapList)>Map Select</div>
-                <div class="map-select button" onclick=@JoinGame>Join Game</div>
+                <div class="map-select button" onclick=@(async () => {
+                    ShowServerList = !ShowServerList;
+                    await GetLobby();
+                })>Join Game</div>
+            
             <div class="exit button" onclick=@CloseGame>Exit</div>
         }
-        else
+        else if (ShowMapList)
         {
             <div class="maps">
                 @foreach(var map in mapItems)
@@ -28,6 +32,18 @@
                 }
             </div>
                 <div class="exit button " onclick="@(() => ShowMapList = !ShowMapList)">Back</div>
+            }
+        else if (ShowServerList)
+        {
+            <div class="servers">
+                    @foreach(var server in serverList)
+                    {
+                        <div class="map-select button" onclick=@(()=>JoinGame(server))>Join Game
+                            <div class="map-name button"> @server.Map</div>
+                        </div>
+                    }
+            </div>
+                <div class="exit button " onclick="@(() => ShowServerList = !ShowServerList)">Back</div>
         }
              </div>
     </div>
@@ -38,20 +54,22 @@
     [Property] public GameManager G;
 
     private bool ShowMapList = false;
+    private bool ShowServerList = false;
     private List<MapItem> mapItems = new List<MapItem>
     {
         new MapItem {Name = "Beginner", SceneName = "surf_beginner"},
-        //new MapItem {Name = "Struct", SceneName = "surf_struct"},
+        new MapItem {Name = "Spot", SceneName = "surf_spot"},
 
     };
-    private async Task JoinGame()
+    private List<LobbyInformation> serverList = new();
+
+    private async Task GetLobby()
     {
-        var list = await Networking.QueryLobbies();
-        var quickLobby = list.FirstOrDefault(l => l.IsFull != true);
-        if (quickLobby.LobbyId != 0)
-        {
-            Networking.Connect(quickLobby.LobbyId);
-        }
+        serverList = await Networking.QueryLobbies();
+    }
+    private async Task JoinGame(LobbyInformation server)
+    {
+        Networking.Connect(server.LobbyId);
     }
     private void CloseGame()
     {

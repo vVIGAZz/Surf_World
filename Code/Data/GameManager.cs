@@ -37,7 +37,6 @@ public sealed class GameManager : Component
 			board.SetSortAscending();
 			board.MaxEntries = 10;
 			await board.Refresh();
-			Log.Info( $"Board entries: {board.Entries.Count()}" );
 			Entries = board.Entries.Take( 10 ).ToList();
 			OnLeaderboardUpdated?.Invoke();
 		}
@@ -45,10 +44,7 @@ public sealed class GameManager : Component
 		{
 			Log.Warning( $"LeaderboardUpdate failed: {e.Message}" );
 		}
-
 	}
-
-
 	protected override void OnEnabled()
 	{
 		EventManager.OnRespawn += Respawn;

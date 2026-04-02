@@ -1000,7 +1000,7 @@
         "b4785a92-bdeb-4681-9459-c55d5e88cae2": "b59ce9d5-1267-49f8-8c8e-0ac170be5250",
         "3d575f1e-af0e-4cab-a61f-84e683c41dab": "d5aec33c-630b-4092-a947-a7063938e990",
         "67c97651-da8d-4abe-b869-4a0d496cec24": "117527c3-c14a-48ec-af7a-45ab413c0a2b",
-        "184f065e-fa57-4804-b0bc-37b1807d0e9b": "3dc3e232-1c06-4f22-a667-8b73f42461db"
+        "fa09b752-0a90-4cd2-86d6-9220ee8bf586": "a2d7e8c4-e7a5-4852-900a-dd43ad34db57"
       }
     },
     {
@@ -2224,6 +2224,19 @@
                 "materials/beginner/rock.vmat"
               ]
             }
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8368e0f2-45ca-48a2-a431-77add5ef94d3"
+            },
+            "Property": "MapName",
+            "Value": {
+              "_type": "component",
+              "component_id": "3b7618e2-26f8-4bb5-bf8a-b508f40f5d78",
+              "go": "8d277e44-c57c-4636-9399-ffd2630dc55d",
+              "component_type": "MapID"
+            }
           }
         ],
         "MovedObjects": []
@@ -2259,6 +2272,30 @@
       "__PrefabIdToInstanceId": {
         "18bcd40a-15d2-4c06-b4f3-7d3a8298ae3f": "2b75de1a-6781-45c3-a8b0-edea21994060",
         "2eae6e4a-a5a8-411b-b97f-6b17cead6aec": "dc0747fb-92d8-411f-a724-fa1c104f3b60"
+      }
+    },
+    {
+      "__guid": "8d277e44-c57c-4636-9399-ffd2630dc55d",
+      "__version": 2,
+      "__Prefab": "prefabs/mapid.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "b4b46b1b-925a-459e-b3e5-6b0980134f1c"
+            },
+            "Property": "Name",
+            "Value": "surf_beginner"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "be8692ec-791d-4113-a0ca-f125f3849c26": "8d277e44-c57c-4636-9399-ffd2630dc55d",
+        "b4b46b1b-925a-459e-b3e5-6b0980134f1c": "3b7618e2-26f8-4bb5-bf8a-b508f40f5d78"
       }
     },
     {
@@ -25337,30 +25374,6 @@
         }
       ],
       "Children": []
-    },
-    {
-      "__guid": "8d277e44-c57c-4636-9399-ffd2630dc55d",
-      "__version": 2,
-      "__Prefab": "prefabs/mapid.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "b4b46b1b-925a-459e-b3e5-6b0980134f1c"
-            },
-            "Property": "Name",
-            "Value": "surf_beginner"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "be8692ec-791d-4113-a0ca-f125f3849c26": "8d277e44-c57c-4636-9399-ffd2630dc55d",
-        "b4b46b1b-925a-459e-b3e5-6b0980134f1c": "3b7618e2-26f8-4bb5-bf8a-b508f40f5d78"
-      }
     }
   ],
   "SceneProperties": {
@@ -25384,7 +25397,7 @@
     "GameObjectSystems": {
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
-          "$blob": "9e690774-0abc-45dc-97c7-a0f4ea321b8e"
+          "$blob": "2bc5481c-78e1-4ff3-8172-cbfd4fca343a"
         }
       }
     }

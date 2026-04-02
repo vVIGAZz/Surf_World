@@ -84,7 +84,7 @@ public sealed class Player : Component
 
 	private void OnLeaderboardUpdated()
 	{
-		if ( G.Entries.Count > 0 )
+		if ( G.Entries.Count > 0)
 		{
 			WorldRecord = G.Entries[0].Value;
 			hud.UpdateWorldRecords( WorldRecord );
@@ -100,11 +100,13 @@ public sealed class Player : Component
 		if ( player != this ) return;
 		StartTimer = false;
 	}
-	private void FinishRun ( Player player )
+	private async void FinishRun ( Player player )
 	{
 		if ( player != this ) return;
 		StartTimer = false;
 		SetTime( Timer );
+		await G.LeaderboardUpdate();
+		//OnLeaderboardUpdated();
 	}
 	protected override void OnEnabled()
 	{
