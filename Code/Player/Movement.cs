@@ -30,7 +30,7 @@ public sealed class Movement : Component
 		if ( IsProxy )
 		{
 			animation.RenderType = ModelRenderer.ShadowRenderType.On;
-			dress.Source = Dresser.ClothingSource.LocalUser;
+			dress.Source = Dresser.ClothingSource.OwnerConnection;
 			dress.BodyTarget = animation;
 			dress.ApplyHeightScale = true;
 			dress.Apply();

@@ -262,9 +262,9 @@
               "component_type": "SkinnedModelRenderer"
             },
             "Clothing": [],
-            "ManualAge": 0,
-            "ManualHeight": 0.95,
-            "ManualTint": 0,
+            "ManualAge": 0.5,
+            "ManualHeight": 0.5,
+            "ManualTint": 0.5,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -272,7 +272,7 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null,
             "RemoveUnownedItems": true,
-            "Source": "LocalUser",
+            "Source": "OwnerConnection",
             "WorkshopItems": []
           }
         ],
