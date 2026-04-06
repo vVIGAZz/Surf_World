@@ -16,7 +16,7 @@ public sealed class Movement : Component
 	private float jumpForce = 268f;
 	//Movement property
 	[Sync] public Vector3 WishVelocity { get; set; }
-	[Sync] public Angles EyeAngle { get; set;}
+	[Sync] public Angles EyeAngle { get; set; }
 	[Sync] public bool IsGrounded { get; set; }
 	[Sync] public bool IsJumping { get; set; }
 	//Speed
@@ -71,10 +71,10 @@ public sealed class Movement : Component
 			EventManager.Respawn( this );
 			controller.Velocity = 0;
 		}
-		if (Input.Keyboard.Pressed("B"))
+		if ( Input.Keyboard.Pressed( "B" ) )
 		{
-			Scene.GetAllComponents<GameManager>().FirstOrDefault().GameObject.Destroy();
 			GameObject.Destroy();
+			Networking.Disconnect();
 			Scene.LoadFromFile( "scenes/mainmenu.scene" );
 		}
 
@@ -123,8 +123,8 @@ public sealed class Movement : Component
 	}
 	private void Animation()
 	{
-		if (IsJumping) animation.Parameters.Set( "b_jump", true );
-		if (IsGrounded ) 
+		if ( IsJumping ) animation.Parameters.Set( "b_jump", true );
+		if ( IsGrounded )
 		{
 			animation.Parameters.Set( "b_grounded", true );
 		}

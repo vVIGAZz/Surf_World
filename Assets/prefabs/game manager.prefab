@@ -1,0 +1,124 @@
+{
+  "RootObject": {
+    "__guid": "2c8f72e0-c3b5-41e1-be2a-61974c469456",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "Game Manager",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "GameManager",
+        "__guid": "2d56e5d9-8c0d-4475-b709-320522dee36a",
+        "__enabled": true,
+        "Flags": 0,
+        "Entries": [],
+        "MapName": null,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "spawnPoint": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "991a810c-0bb8-403e-b180-6232d8f0b5e0",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "UI Panels",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": [
+          {
+            "__guid": "67e82b1c-b677-4e7d-bb9a-332d09c095e9",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "Leaderboard",
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.WorldPanel",
+                "__guid": "774ef04f-03c4-430f-8a7a-b12bc4f82614",
+                "__enabled": true,
+                "Flags": 0,
+                "HorizontalAlign": "Center",
+                "InteractionRange": 1000,
+                "LookAtCamera": false,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "PanelSize": "1920,1080",
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderScale": 1,
+                "VerticalAlign": "Center"
+              },
+              {
+                "__type": "Sandbox.Leaderboard",
+                "__guid": "8e245414-09c0-4d7f-bbb7-620976cf5000",
+                "__enabled": true,
+                "Flags": 0,
+                "G": {
+                  "_type": "component",
+                  "component_id": "2d56e5d9-8c0d-4475-b709-320522dee36a",
+                  "go": "2c8f72e0-c3b5-41e1-be2a-61974c469456",
+                  "component_type": "GameManager"
+                },
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null
+              }
+            ],
+            "Children": []
+          }
+        ]
+      }
+    ]
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

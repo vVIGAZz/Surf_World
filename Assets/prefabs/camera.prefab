@@ -3,7 +3,7 @@
     "__guid": "724b3429-dda9-4468-804f-a9433be8dceb",
     "__version": 2,
     "Flags": 0,
-    "Name": "Camera",
+    "Name": "camera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -41,11 +41,31 @@
         "RenderTexture": null,
         "TargetEye": "None",
         "Viewport": "0,0,1,1",
-        "ZFar": 10000,
+        "ZFar": 15000,
         "ZNear": 1
       }
     ],
-    "Children": []
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

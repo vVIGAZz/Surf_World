@@ -7,16 +7,13 @@ Layer0
 	//---- PBR ----
 	F_SELF_ILLUM 1
 
-	//---- Translucent ----
-	F_TRANSLUCENT 1
-
 	//---- Ambient Occlusion ----
 	g_flAmbientOcclusionDirectDiffuse "0.000"
 	TextureAmbientOcclusion "materials/default/default_ao.tga"
 
 	//---- Color ----
 	g_flModelTintAmount "1.000"
-	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vColorTint "[0.031373 1.000000 0.000000 0.000000]"
 	TextureColor "materials/default/default_color.tga"
 
 	//---- Fade ----
@@ -32,24 +29,20 @@ Layer0
 	TextureNormal "materials/default/default_normal.tga"
 
 	//---- Roughness ----
-	g_flRoughnessScaleFactor "0.000"
+	g_flRoughnessScaleFactor "2.000"
 	TextureRoughness "materials/default/default_rough.tga"
 
 	//---- Self Illum ----
-	g_flSelfIllumAlbedoFactor "0.022"
-	g_flSelfIllumBrightness "3.630"
-	g_flSelfIllumScale "16.000"
+	g_flSelfIllumAlbedoFactor "1.000"
+	g_flSelfIllumBrightness "0.000"
+	g_flSelfIllumScale "0.644"
 	g_vSelfIllumOffset "[0.000 0.000]"
 	g_vSelfIllumScrollSpeed "[0.000 0.000]"
-	g_vSelfIllumTint "[1.000000 0.862745 0.690196 1.000000]"
+	g_vSelfIllumTint "[0.149020 1.000000 0.000000 0.000000]"
 	TextureSelfIllumMask "[1.000000 1.000000 1.000000 0.000000]"
 
 	//---- Texture Coordinates ----
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
 	g_vTexCoordScrollSpeed "[0.000 0.000]"
-
-	//---- Translucent ----
-	g_flOpacityScale "0.122"
-	TextureTranslucency "[0.609000 0.609000 0.609000 0.000000]"
 }

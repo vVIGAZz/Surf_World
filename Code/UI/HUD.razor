@@ -39,16 +39,20 @@
     [Property] private Leaderboard _leaderboard;
     public void UpdateTime(double time)
     {
+        if (IsProxy) return;
         _currentTime = time;
         StateHasChanged();
     }
     public void UpdateRecords(double time)
     {
+        if (IsProxy) return;
+
         _bestTime = time;
         StateHasChanged();
     }
     public void UpdateWorldRecords(double time)
     {
+        if (IsProxy) return;
 
         _worldRecord = time;
         StateHasChanged();

@@ -17,12 +17,19 @@ public sealed class Player : Component
 	protected override void OnStart()
 	{
 		Tag.GameObject.WorldPosition.WithZ( 100 );
-		if ( IsProxy ) return;
+		if ( IsProxy )
+		{
+			if (hud != null )
+			{
+				hud.Enabled = false;
+			}
+			return;
+		}
 		G = Scene.GetAllComponents<GameManager>().FirstOrDefault();
-		if (G != null )
+		if ( G != null )
 		{
 			MapName = G.MapName;
-			if (G.Entries.Count > 0 )
+			if ( G.Entries.Count > 0 )
 			{
 				WorldRecord = G.Entries[0].Value;
 			}
@@ -48,11 +55,11 @@ public sealed class Player : Component
 			hud.UpdateTime( Timer );
 		}
 	}
-	public void SetTime(double PR)
+	public void SetTime( double PR )
 	{
-		if (IsProxy) return;
-		if (PR <=0 ) return;
-		if (IsFirstRun || PR < PersonTime )
+		if ( IsProxy ) return;
+		if ( PR <= 0 ) return;
+		if ( IsFirstRun || PR < PersonTime )
 		{
 			IsFirstRun = false;
 			PersonTime = PR;
@@ -65,12 +72,12 @@ public sealed class Player : Component
 	{
 		var saveData = SaveLoadSystem.Load() ?? new SaveFile();
 		saveData.PersonalRecords[MapName] = PersonTime;
-		SaveLoadSystem.Save(saveData);
+		SaveLoadSystem.Save( saveData );
 	}
 	public void Load()
 	{
 		var loadData = SaveLoadSystem.Load();
-		if ( loadData != null && loadData.PersonalRecords.ContainsKey(MapName))
+		if ( loadData != null && loadData.PersonalRecords.ContainsKey( MapName ) )
 		{
 			PersonTime = loadData.PersonalRecords[MapName];
 			IsFirstRun = PersonTime == 0;
@@ -84,13 +91,13 @@ public sealed class Player : Component
 
 	private void OnLeaderboardUpdated()
 	{
-		if ( G.Entries.Count > 0)
+		if ( G.Entries.Count > 0 )
 		{
 			WorldRecord = G.Entries[0].Value;
 			hud.UpdateWorldRecords( WorldRecord );
 		}
 	}
-	private void StartRun(Player player)
+	private void StartRun( Player player )
 	{
 		if ( player != this ) return;
 		StartTimer = true;
@@ -100,7 +107,7 @@ public sealed class Player : Component
 		if ( player != this ) return;
 		StartTimer = false;
 	}
-	private async void FinishRun ( Player player )
+	private async void FinishRun( Player player )
 	{
 		if ( player != this ) return;
 		StartTimer = false;
@@ -117,9 +124,11 @@ public sealed class Player : Component
 	}
 	protected override void OnDisabled()
 	{
+		Networking.Disconnect();
+		GameObject.Destroy();
 		EventManager.OnStart -= StartRun;
 		EventManager.OnStop -= StopRun;
 		EventManager.OnFinish -= FinishRun;
-		if ( G != null )  G.OnLeaderboardUpdated -= OnLeaderboardUpdated;
+		if ( G != null ) G.OnLeaderboardUpdated -= OnLeaderboardUpdated;
 	}
 }

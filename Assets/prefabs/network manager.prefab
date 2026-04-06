@@ -1,9 +1,9 @@
 {
   "RootObject": {
-    "__guid": "c8f20e21-197b-4778-b413-cc9fa0eb7414",
+    "__guid": "a0755e7a-410a-4bc2-b6e3-1cc6a93644e7",
     "__version": 2,
     "Flags": 0,
-    "Name": "Network",
+    "Name": "Network Manager",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -16,8 +16,8 @@
     "OwnerTransfer": 1,
     "Components": [
       {
-        "__type": "Sandbox.NetworkHelper",
-        "__guid": "b2586c04-21d5-4883-a38a-ff9016dccc0e",
+        "__type": "NetworkManager",
+        "__guid": "fdfe0987-3d00-4ed6-b3bf-cccfdbb9e794",
         "__enabled": true,
         "Flags": 0,
         "OnComponentDestroy": null,
@@ -26,17 +26,14 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "PlayerPrefab": {
+        "playerPrefab": {
           "_type": "gameobject",
           "prefab": "prefabs/player.prefab"
         },
-        "SpawnPoints": [
-          {
-            "_type": "gameobject",
-            "go": "36d72f6f-2f03-47fd-8c73-6e8c4de88c41"
-          }
-        ],
-        "StartServer": true
+        "SpawnPoint": {
+          "_type": "gameobject",
+          "go": "36d72f6f-2f03-47fd-8c73-6e8c4de88c41"
+        }
       }
     ],
     "Children": []
