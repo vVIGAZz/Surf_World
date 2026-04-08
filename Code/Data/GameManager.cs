@@ -11,6 +11,10 @@ public sealed class GameManager : Component
 	[Property] public string MapName { get; set; }
 	//UI
 	[Property] public List<Leaderboards.Board2.Entry> Entries = new();
+	protected override async void OnStart()
+	{
+		await LeaderboardUpdate();
+	}
 	public void Respawn( Movement player )
 	{
 		player.GameObject.WorldPosition = spawnPoint.WorldPosition;

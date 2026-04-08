@@ -32,5 +32,9 @@
         double seconds = timeSecond % 60;
         return $"{minutes:00}:{seconds:00.000}";
     }
-    protected override int BuildHash() => System.HashCode.Combine(G?.Entries?.Count, G?.Entries?.FirstOrDefault().DisplayName);
+    protected override int BuildHash()
+    {
+        var firstEntry = G?.Entries?.FirstOrDefault();
+        return System.HashCode.Combine(G?.Entries?.Count, firstEntry?.Value, firstEntry?.DisplayName);
+    }
 }

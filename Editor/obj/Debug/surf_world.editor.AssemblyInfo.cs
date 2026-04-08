@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("surf_world.editor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e392b04ab47e605b1fe7a4d1fd334e7bfecf679c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62b5529ae8787605f885a90212a7afc1d080ad84")]
 [assembly: System.Reflection.AssemblyProductAttribute("surf_world.editor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("surf_world.editor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

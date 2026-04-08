@@ -26,6 +26,29 @@
     "StartupScene": "scenes/mainmenu.scene",
     "LaunchMode": "Normal",
     "MapStartupScene": "scenes/mainmenu.scene",
-    "DedicatedServerStartupScene": "scenes/mainmenu.scene"
+    "DedicatedServerStartupScene": "scenes/mainmenu.scene",
+    "ControlModes": {
+      "Keyboard": false,
+      "VR": false,
+      "Gamepad": false
+    },
+    "Compiler": {
+      "RootNamespace": "Sandbox",
+      "DefineConstants": "SANDBOX",
+      "NoWarn": "1701;1702;1591;",
+      "WarningsAsErrors": "",
+      "TreatWarningsAsErrors": false,
+      "Nullables": false,
+      "ReleaseMode": "Debug",
+      "AssemblyReferences": [],
+      "ReplacementDirectives": {
+        ".Server.cs": "SERVER"
+      },
+      "IgnoreFolders": [
+        "editor",
+        "unittest"
+      ],
+      "DistinctAssemblyReferences": []
+    }
   }
 }

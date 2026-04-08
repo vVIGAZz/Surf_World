@@ -16,6 +16,7 @@
 		<DocumentationFile>../../../Program Files (x86)/Steam/steamapps/common/sbox/.vs/output/surf_world.editor.xml</DocumentationFile>
 		<RootNamespace>Sandbox</RootNamespace>
 		<Nullable>disable</Nullable>
+		<DefaultItemExcludes>$(DefaultItemExcludes);**/editor/**;**/unittest/**</DefaultItemExcludes>
 	</PropertyGroup>
 
 	<ItemGroup>

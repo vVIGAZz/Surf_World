@@ -1,5 +1,6 @@
 using Sandbox;
 using Sandbox.Services;
+using Sandbox.UI;
 public sealed class Player : Component
 {
 	//Game Manager
@@ -14,6 +15,9 @@ public sealed class Player : Component
 	[Property] public string MapName { get; set; }
 	[Property] public double PersonTime { get; set; }
 	[Property] public bool IsFirstRun { get; set; }
+
+	private bool _scoreOpen;
+	private bool _isPause;
 	protected override void OnStart()
 	{
 		Tag.GameObject.WorldPosition.WithZ( 100 );
@@ -44,6 +48,19 @@ public sealed class Player : Component
 	protected override void OnUpdate()
 	{
 		if ( IsProxy ) return;
+		if ( Input.Pressed( "score" ) )
+		{
+			_scoreOpen = !_scoreOpen;
+			if ( _scoreOpen ) Game.Overlay.ShowPlayerList();
+			else Game.Overlay.CloseAll();
+		}
+		if ( Input.EscapePressed )
+		{
+			Input.EscapePressed = false;
+			_isPause = !_isPause;
+			if ( _isPause ) Game.Overlay.ShowPauseMenu();
+			else Game.Overlay.CloseAll();
+		}
 		if ( StartTimer )
 		{
 			Timer += Time.Delta;

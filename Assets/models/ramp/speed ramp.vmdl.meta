@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Speed Ramp",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "speedramp",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "subzerostudios.onyx013#147747"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "models/ramp/speed ramp.vmdl"
+      }
+    }
+  }
+}

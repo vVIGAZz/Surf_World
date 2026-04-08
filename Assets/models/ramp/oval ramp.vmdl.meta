@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Oval Ramp",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "ovalramp",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "subzerostudios.onyx001#147734"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "models/ramp/oval ramp.vmdl"
+      }
+    }
+  }
+}
